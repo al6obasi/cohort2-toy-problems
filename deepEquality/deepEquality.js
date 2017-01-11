@@ -15,7 +15,7 @@
   var deepEquals = function(obj1, obj2){
     var count = Object.keys(obj1);
     var count2 =Object.keys(obj1);
-
+    console.log(count)
     if (count.length !== count2.length) {
       return false;
     }
@@ -26,7 +26,9 @@
         }
     }
     for (var i = 0; i < count2.length; i++) {
-      if (obj1[count[i]] !== obj2[[count2]]) {
+      console.log(obj1[count[i]])
+      console.log(obj2[count2[i]])
+      if (obj1[count[i]] !== obj2[count2[i]]) {
         return false;
       }
     }
