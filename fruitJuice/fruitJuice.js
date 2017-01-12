@@ -21,8 +21,31 @@ Complete the functions in order to provide this functionality.
 */
 
 function Jar() {
-  // TODO
+  var storage = Object.create(jarfr);
+  storage.total = 0;
+  return storage;
 }
+var jarfr ={};
+jarfr.getConcentration = function(str){
+  var result ;
+  for(var str in this.storage){
+    result = this.storage[str]
+        return result;
+  }
+
+}
+jarfr.add =function(number,str){
+  for( var str in this.storage){
+    this.storage[str] += number;
+    this.total += number;
+  }
+  this.storage[str] = number;
+}
+jarfr.getTotalAmount = function(){
+  return this.total;
+};
+
+// the complixty is O(n)
 
 /*
 These are some tests:
