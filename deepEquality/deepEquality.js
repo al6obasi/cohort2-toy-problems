@@ -12,6 +12,7 @@
   *
   */
 
+<<<<<<< HEAD
   var deepEquals1 = function(obj1, obj2){
     // This Solution if the data types of keys and values are string or number ;     
     var count = Object.keys(obj1);
@@ -39,3 +40,8 @@
   return  JSON.stringify(obj1) === JSON.stringify(obj2)
   }
 // the complixty time is O(n);
+=======
+  var deepEquals = function(obj1, obj2){
+
+  }
+>>>>>>> 1ab6029e2b0ea9577ff72d4c21a7412c9e55a82c
