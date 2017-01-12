@@ -12,10 +12,10 @@
   *
   */
 
-  var deepEquals = function(obj1, obj2){
+  var deepEquals1 = function(obj1, obj2){
+    // This Solution if the data types of keys and values are string or number ;     
     var count = Object.keys(obj1);
     var count2 =Object.keys(obj1);
-    console.log(count)
     if (count.length !== count2.length) {
       return false;
     }
@@ -34,5 +34,8 @@
     }
     return true;
   }
-
+  //second soltion if i have objects inside object or array inside object ;
+  var deepEquals = function(obj1, obj2){
+  return  JSON.stringify(obj1) === JSON.stringify(obj2)
+  }
 // the complixty time is O(n);
