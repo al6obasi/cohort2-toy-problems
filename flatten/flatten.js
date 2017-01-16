@@ -41,9 +41,11 @@ function flatten(coll){
 
 }
 // with recursion 
-function flatten1(coll){
-  var array =arguments;
   var result =[];
+
+function flatten1(coll){
+
+  var array =arguments;
   for (var i = 0; i < array.length; i++) {
     if (typeof(array[i]) === "string" || typeof(array[i]) === 'number' ||array[i]=== null) {
        result.push(array[i])
@@ -55,7 +57,7 @@ function flatten1(coll){
           result.push(array[i][j])
           }
         else{
-          flatten1(array[i][j])
+          result = result.push(flatten1(array[i][j]))
         
         }  
        }
