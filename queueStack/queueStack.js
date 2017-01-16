@@ -49,6 +49,7 @@
 
    // should return the number of items in the queue
    this.size = function(){
-   return this.storage.length;
+   return this.inbox.length -this.outbox.length;
    };
 
+// time compilixty : O(n) 
