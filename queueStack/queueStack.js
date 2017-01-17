@@ -43,6 +43,7 @@
     Queue.prototype.constructor = Queue ;
    // called to remove an item from the `queue`
    this.dequeue = function(){
+    this.stack.reverse().shift().reverse();
     outbox.shift();
     
    };
