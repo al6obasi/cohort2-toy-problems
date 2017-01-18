@@ -94,3 +94,18 @@ function nextBigger(n){
   return Number(str2.join(""));
  }
 }
+// function nextBigger(number){
+// 	if (number < 0) {
+// 		return 'Please Enter a positive number '
+// 	}
+// 	var str = number +''
+// 	var arr = str.split('')
+// 	if (arr.length <= 2) {
+// 		for (var i = 0; i < arr.length; i++) {
+// 			arr[i] = Number(arr[i]);
+// 		}
+	
+
+// 	}
+//   return Number(arr.reverse().join(''));
+// }
