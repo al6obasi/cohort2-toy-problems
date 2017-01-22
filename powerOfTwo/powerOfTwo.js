@@ -35,4 +35,4 @@ return sum ;
   }
 return toFixed(sol)
 }
-// the time complixty exponantial
+// the time complixty = O(N)
