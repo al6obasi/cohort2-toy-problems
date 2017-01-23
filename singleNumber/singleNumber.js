@@ -52,7 +52,8 @@ function twoSum(nums, target){
  	for (var j = 0; j < nums.length; j++) {
 		sum = nums[i] + nums [j]
 	 	if (sum === target ) {
- 			arr.push(arr[i],arr[j])
+
+ 			arr.push(i,j)
  			return arr;
  		}
  		else {
