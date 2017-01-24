@@ -52,7 +52,6 @@ function twoSum(nums, target){
  	for (var j = 0; j < nums.length; j++) {
 		sum = nums[i] + nums [j]
 	 	if (sum === target ) {
-
  			arr.push(i,j)
  			return arr;
  		}
@@ -76,5 +75,9 @@ countAllNumbers(2); //should return 91 because there are 91 numbers that have un
 */
 
 function countAllNumbers(n){
-
+var count = 0;
+var arr =[];
+for (var i = 1; i < Math.pow(10,n).length; i++) {
+ 	arr.push(i);
+ } 
 };

@@ -22,81 +22,21 @@ ticTacToe(solvedBoard);//should return 1
 */
 
 function ticTacToe(board){
-var anyRow =function(rowIndex) {
-var array = board[rowIndex];
-var count = 0;
-var countO =0;
-for (var i = 0; i < array.length; i++) {
-if (array[i] === 1) {
- count += 1
-}
-else {
-	if (array[i] === 2) {
-		countO +=1;
-	}
-}
-}
-  if (countO === 3 || count === 3) {
- 	return 1;
+var row1 = board[0];
+var row2 = board[1];
+var row3 = board[2];
+  if (row1 [0] === 0 && row1 [1] === 0 &&row1 [2] === 0 && row2 [0] === 0 && row2 [1] === 0 && row2 [2] === 0 && row3 [0] === 0 && row3 [1] === 0 && row3 [2] === 0) {
+    return 0 ;
+
+  }
+  else if ((row1 [0] === 1 && row2 [1] === 1 && row3 [2] === 1) || (row2 [0] === 1 && row2 [1] === 1 && row2 [2] === 1)  || (row1 [0] === 1 && row1 [1] === 1 && row1 [2] === 1) || (row3 [0] === 1 && row3 [1] === 1 && row3 [2] === 1) || (row3 [2] === 1 && row2 [1] === 1 && row1 [0] === 1)) {
+     return 1 ;
+  }
+  else if ((row1 [0] === 2 && row2 [1] === 2 && row3 [2] === 2) || (row2 [0] === 2 && row2 [1] === 2 && row2 [2] === 2)  || (row1 [0] && row1 [1] && row1 [2] === 2) || (row3 [0] && row3 [1] && row3 [2] === 2) || (row3 [2] === 2&& row2 [1] === 2 && row1 [0] === 2)) {
+     return 2 ;
+  }
+  else {
+     return -1 ;
   }
 }
-var hasAnyRowsolved =  function() {
-for (var i = 0; i < board.length; i++) {
-if (this.hasRowsolvedAt(i)) {
-  return 1;
-}
-}
-else {
-	return hasAnyColsolved();
-}
-}
-var hasColsolvedAt =function(colIndex) {
-var count =0 ;
-var arr =[];
-
-for (var i = 0; i < board.length; i++) {
-  arr.push(this.rows()[i][colIndex]);
-}
-for (var i = 0; i < arr.length; i++) {
-    if (arr[i]=== 1) {
-        count +=1;
-    }
-    else {
-		   	if (array[i] === 2) {
-		countO +=1;
-		} 
-		}
-}
-if (count ==== 3 || countO === 3) {
-return 1;
-}
-}
-var hasAnyColsolved = function() {
-var count = 0 ;
-var arr =[] ;
-for (var i = 0; i < board.length; i++) {
-  if (this.hasColsolvedAt(i)) {
-    return 1;
-  }
-
-}
-return anySol();
-}
-var anySol = function (){
-if (board[0][0] === 1 && board [1][1] === 1 && board [2][2] === 1) {
-	return 1
-}
-elseif (board[0][0] === 2 && board [1][1] === 2 && board [2][2] === 2) {
-		return 1
-}
-elseif (board[2][0] === 2 && board [1][1] === 2 && board [0][2] === 2){
-	return 1
-}
-elseif (board[2][0] === 1 && board [1][1] === 1 && board [0][2] === 1)
-	return 1;
-}
-}
-return hasAnyRowsolved;
-}
-
-// the complixty time is O(N^2) quardatic 
+// the complixty time is constant 

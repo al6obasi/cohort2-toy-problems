@@ -1,111 +1,77 @@
-/*
 
-**** PICK ONE OF THE TWO PROBLEMS ****
-
-Problem 1 (Medium):
-Create a function named "rotate" that takes an array and returns a new one
-with the elements inside rotated n spaces.
-
-If n is greater than 0 it should rotate the array to the right. 
-If n is less than 0 it should rotate the array to the left. 
-If n is 0, then it should return the array unchanged.
-
-Examples:
-
-Should work on arrays of any data types:
-rotate(['a', 'b', 'c'], 1)     // => ['c', 'a', 'b']
-rotate([1.0, 2.0, 3.0], 1)     // => [3.0, 1.0, 2.0]
-rotate([true, true, false], 1) // => [false, true, true]
-
-var data = [1, 2, 3, 4, 5];
-rotate(data, 1) // => [5, 1, 2, 3, 4]
-rotate(data, 2) // => [4, 5, 1, 2, 3] 5 4 
-rotate(data, 5) // => [1, 2, 3, 4, 5] 
-rotate(data, 0) // => [1, 2, 3, 4, 5]
-rotate(data, -1) // => [2, 3, 4, 5, 1]
-rotate(data, -2) // => [3, 4, 5, 1, 2]
-rotate(data, -5) // => [1, 2, 3, 4, 5]
-
-The rotation shouldn't be limited by the indices available in the array. 
-Meaning that if we exceed the indices of the array it keeps rotating.
-
-rotate(data, 7)     // => [4, 5, 1, 2, 3]
-rotate(data, 11)    // => [5, 1, 2, 3, 4]
-rotate(data, 12478) // => [3, 4, 5, 1, 2]
-
-*/
 function rotate(array, steps){
-
-}
-
-/*
-Problem 2 (Advanced)
-You have to create a function that takes a positive integer number and returns the 
-next bigger number formed by the same digits:
-
-Exanmples:
-nextBigger(12)==21
-nextBigger(513)==531
-nextBigger(2017)==2071
-
-If no bigger number can be composed using those digits, return -1:
-
-nextBigger(9)==-1
-nextBigger(111)==-1
-nextBigger(531)==-1
-*/
-function nextBigger(n){
-	var s=n.toString()
-	if (s.length<3){
-		var str=s.split("").sort().reverse().join("")
-		return Number(str)
-	}
-	else if (s.length===3){
-  		var str =s.split("")
-  		var str2=[];
-  		var temp=0;
-  		for (var i=s.length-1; i>=0 ; i--){
-    		temp=s[s.length-3]
-    		if (temp < s[i]){
-      			temp =s[i];
-      			str2.push(temp)
-    		}
-    		else {
-    		  str2.push(s[i])
-    		}
-  		}
-  return Number(str2.join(""));
-	}
-  else if (s.length===4){
-	  var str =s.split("")
-	  var str2=[];
-	  var temp=0;
-      str2.push(s[0])
-      str2.push(s[1])
-  for (var i=s.length-1; i>1 ; i--){
-  	  if (temp > s[i]){
-    	  temp =s[i];
-      	  str2.push(temp)
-      }
-      else {
-      str2.push(s[i])
-      }
+  if ( steps === 0 ) {
+    return array ;
   }
-  return Number(str2.join(""));
- }
-}
-// function nextBigger(number){
-// 	if (number < 0) {
-// 		return 'Please Enter a positive number '
-// 	}
-// 	var str = number +''
-// 	var arr = str.split('')
-// 	if (arr.length <= 2) {
-// 		for (var i = 0; i < arr.length; i++) {
-// 			arr[i] = Number(arr[i]);
-// 		}
-	
+  else {
+    if (steps > 0) {
+      while(steps > 0){
+        var temp =array[array.length-1]
+        // console.log(temp)
+        // console.log(array.slice(0,array.length-1))
+        array = array.slice (0,array.length-1)
+        array.unshift(temp)
+        steps -- ;
+      }
+    return array ;
+    }
+  else {
+      while (steps < 0){
+        var temp =array[0]
+        array = array.slice (1)
+        array.push(temp)
+        steps ++ ; 
+      }
+      return array ;
+    }
+  }
 
-// 	}
-//   return Number(arr.reverse().join(''));
-// }
+}
+function nextBigger(num){
+  num = num + '';
+  if (num.length === 1) {
+    return -1
+  }
+  if (num.length === 2) {
+    if (Number(num[0]) < Number(num[1]) ) {
+      var arr =[];
+      arr.push(Number(num [1]))
+      arr.push(Number(num [0]))
+      console.log(arr)
+      return  Number(arr.join(''));
+    }
+    else {
+     return Number (num) 
+    }
+  }
+    if (num.length === 3) {
+    if (Number(num[1]) < Number(num[2]) ) {
+      var arr =[];
+      arr.push(Number(num [0]))
+      arr.push(Number(num [2]))
+      arr.push(Number(num [1]))
+      console.log(arr)
+      return  Number(arr.join(''));
+    }
+    else {
+           var arr =[];
+      arr.push(Number(num [1]))
+      arr.push(Number(num [2]))
+      arr.push(Number(num [0]))
+      console.log(arr)
+      return  Number(arr.join('')); 
+    }
+  }
+  var max = 0;
+    for(var i=num.length-2; i>0; i--){
+      var numArray = num.substr(i).split("");
+      max = Math.max.apply ( Math,numArray );
+      if ( numArray[0] < max ){
+          numArray.sort( function ( a , b ) { return a-b ; } );
+          numArray.splice( -1 );
+          numArray = numArray.join("");
+          return Number( num.substr( 0 , i ) + max + numArray );
+      }
+    }
+  return -1;
+};
