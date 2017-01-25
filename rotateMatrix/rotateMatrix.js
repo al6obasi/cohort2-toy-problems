@@ -36,6 +36,7 @@
  *  - Make your function operate on rectangular matrices (MxN rather than NxN).
  *  - Make your function accept a parameter for the direction of rotation (1 = clockwise, -1 = counterclockwise)
  */
+<<<<<<< HEAD
 var rotateMatrix =function (matrix , num) {
 var array =[];
 var bigArr =[];
@@ -67,4 +68,10 @@ else if (num === -1 ){
 }
 }
 // the complixtiy is linear Big (N);
+=======
+
+var rotateMatrix =function (matrix) {
+	
+}
+>>>>>>> 1337768aeb5d682fb6643a9f52b37165938d4930
 ///////////////////
