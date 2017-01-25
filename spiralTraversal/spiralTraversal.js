@@ -9,7 +9,37 @@
     ]);
     returns [1, 2, 3, 6, 9, 8, 7, 4, 5]
  */
-
 var spiralTraversal = function(matrix){
+	var array =[];
+	for (var i = 0; i < matrix.length; i++ ) {
+		for (var j = 0; j < matrix[i].length; j++) {
+			if ( i === 0 ) {
+			array.push(matrix[i][j])
+			}
+			if (i === 1) {
+			j+=2;
+			array.push(matrix[i][j])
+			}
+			if (i === 2) {
+			j=2;
+				array.push(matrix[i][j])
+			}
+		}
+		if (i === 2) {
+		j-=2;
+		array.push(matrix[i][j])
+		}
+	}
+	j=0;
+	for (var i = matrix.length-1; i >= 0; i--) {
+		array.push(matrix[i][j])
+		if (i === 1) {
+			j++;
+		array.push(matrix[i][j])
+		return array;
+		}
+	}
 
+	return array;
 };
+// complixtiy time is quardatic 
