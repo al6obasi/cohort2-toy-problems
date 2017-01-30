@@ -44,7 +44,7 @@ var dirReduc = function(directions){
 				count2 -- ;
 			}
 		}
-		if (count1 && count2 === 0) {
+		if (count1 === 0 && count2 === 0) {
 			return "No need to move"
 		}
 	while(count1 > 0){
