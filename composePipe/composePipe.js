@@ -38,19 +38,30 @@
 var add2 = function(number){ return number + 2; }
 var multiplyBy3 = function(number){ return number * 3; }
 
-var pipe = function(func1,func2){
-  
+var pipe = function(n,func1,func2,func3){
+var a = add2(n);
+var b = multiplyBy3(a);
+var c = multiplyBy3 (b);
+return c;
 };
 
-var addAndMultiplyTwice = pipe(add2, multiplyBy3, multiplyBy3);
+var addAndMultiplyTwice = function (n){
+return pipe(n,add2, multiplyBy3, multiplyBy3);
 
+}
 //==============================================================================
 
- var greet = function(name){ return 'hello ' + name;}
- var exclaim = function(statement) { return statement.toUpperCase() + '!';}
+ var greet = function(name){
+  var  name = name || 'Mohammad' ;
+   return 'hello ' + name;}
+ var exclaim = function(statement) {
+  return statement.toUpperCase() + '!';
+}
 
 var compose = function(){
-  
+  var a = greet ();
+  var c = exclaim (a);
+  return c ;
 };
 
 
