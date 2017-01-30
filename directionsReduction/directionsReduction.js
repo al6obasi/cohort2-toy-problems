@@ -26,6 +26,7 @@ More examples:
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]) => ["WEST"]
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"]) => [] //don't need to move at all
 */
+<<<<<<< HEAD
 var dirReduc = function(directions){
 	var count1 = 0 ;
 	var count2 = 0 ;
@@ -68,4 +69,11 @@ var dirReduc = function(directions){
 	//return directions;
 };
 // the complixity time is linear 
+=======
+
+var dirReduc = function(directions){
+	
+	return directions;
+};
+>>>>>>> d2130e14cb0ab2ec81404accbb5aee359f2349a4
 
