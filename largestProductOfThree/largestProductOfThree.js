@@ -13,6 +13,6 @@ var largestProductOfThree = function(array) {
 	return max ; 
 };
 
-// the complixity time is linear 
+// the complixity time is linear
 
 
