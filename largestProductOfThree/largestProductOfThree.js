@@ -8,11 +8,18 @@
  */
 
 var largestProductOfThree = function(array) {
+<<<<<<< HEAD
 	var	result = array.sort((a,b) => (a-b) );
 	var	max =result[result.length-1] * result[result.length-2] * result[result.length-3];
 	return max ; 
 };
 
 // the complixity time is linear
+=======
+	
+};
+
+
+>>>>>>> 1fb158920ffe70da4fdfa3bb981fc802cd8c688a
 
 
