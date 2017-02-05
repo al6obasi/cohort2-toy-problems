@@ -25,13 +25,20 @@ buildTriangle(3);// should output [[1],[1,1],[1,2,1]];
 */
 
 var buildTriangle = function(numOfRows){
-	var sum = 0 ;
-	var arr =[];
-	var array =[];
-	for (var i = 0; i < numOfRows.length; i++) {
-			arr.push(1)
-		}
-		array.push(arr)	
-		return array;
+	var result = [];
+	// initilize the first two rows of arrays.
+    result[0] = [1];
+    result[1] = [1,1];
+	for (var row = 2; row < numOfRows; row++){
+    	result[row] = [1];
+    	// console.log(result)
+    	for (var col = 1; col <= row -1; col++){
+    	// console.log(result)
+    		
+        	result[row][col] = result[row-1][col] + result[row-1][col-1];
+        	result[row].push(1);
+    	}
+	}
+return result;
 }
-		
+// The complixity time is O(N^2);
