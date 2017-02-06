@@ -21,6 +21,7 @@
 /*
  * Extra credit: Make the method work for arrays that contain objects and/or arrays as elements.
 */
+<<<<<<< HEAD
 Array.prototype.isSubsetOf = function (arr) {
   var count = 0; 
   // console.log(this)
@@ -34,3 +35,9 @@ Array.prototype.isSubsetOf = function (arr) {
     return count === this.length;
 };
 // the time complixity is O(n^2)
+=======
+
+Array.prototype.isSubsetOf = function (arr) {
+
+}
+>>>>>>> 489641d63aec9a4741e9d52eb49286a5629cb485

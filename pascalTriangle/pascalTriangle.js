@@ -25,6 +25,7 @@ buildTriangle(3);// should output [[1],[1,1],[1,2,1]];
 */
 
 var buildTriangle = function(numOfRows){
+<<<<<<< HEAD
 	var result = [];
 	// initilize the first two rows of arrays.
     result[0] = [1];
@@ -42,3 +43,8 @@ var buildTriangle = function(numOfRows){
 return result;
 }
 // The complixity time is O(N^2);
+=======
+	
+}
+		
+>>>>>>> 489641d63aec9a4741e9d52eb49286a5629cb485
