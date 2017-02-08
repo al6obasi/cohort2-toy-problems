@@ -25,6 +25,7 @@ var makeBoard = function(n) {
     this[i][j] = !this[i][j];
   }
   board.hasBeenVisited = function(i, j) {
+    console.log(this[i][j])
     return !!this[i][j];
   }
   return board;
