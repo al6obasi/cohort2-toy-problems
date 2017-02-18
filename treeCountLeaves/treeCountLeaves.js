@@ -55,7 +55,7 @@ Tree.prototype.countLeaves = function (node) {
   }
   return count ;
 }
-
+  
 /**
   * You shouldn't need to change anything below here, but feel free to look.
   */
