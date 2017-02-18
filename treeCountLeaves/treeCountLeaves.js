@@ -39,7 +39,21 @@ var Tree = function(value){
 
 
 
-Tree.prototype.countLeaves = function () {
+Tree.prototype.countLeaves = function (node) {
+  var count = 0 ;
+  if (this.children === undefined  ) {
+    count ++ ;
+  }
+  else {
+      var i = 0 ;
+    while(this.children [i] !== undefined){
+      this.countLeaves(this.children[i]);
+      i++;
+      count ++ ;    
+    }
+
+  }
+  return count ;
 }
 
 /**
@@ -51,7 +65,6 @@ Tree.prototype.countLeaves = function () {
   * (wrap values in Tree nodes if they're not already)
   */
 Tree.prototype.addChild = function(child){
-  
 };
 
 /**
@@ -66,5 +79,4 @@ Tree.prototype.isDescendant = function(child){
   * remove an immediate child
   */
 Tree.prototype.removeChild = function(child){
-  
 };
