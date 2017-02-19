@@ -43,9 +43,7 @@ Please see example usage to understand what should be passed to the callback.
 
 var asyncSum = function(a,b,callback){
 	if (typeof(a) !== 'number'  || typeof(b) !== 'number') {
-		 //callback (a){
-			console.log('Incorrect argument') ;
-		//}	
+		return callback(1,a)	// or b
 	}
 		  setTimeout(function () {
 			return callback(0,a+b) 
@@ -75,7 +73,7 @@ Problem 3 (ADVANCED):
 
 What kind of candy do you like?
 Your answer: 
-
+callback kind is better than syncro kind
 */
 
 
