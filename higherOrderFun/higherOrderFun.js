@@ -11,11 +11,16 @@ of calling the callback function.
 See example usage to understand what arguments are passed to the callback.
 */
 
+<<<<<<< HEAD
 Array.prototype.map = function(callback(x)){
 	 var array =[];
 	 for (var i = 0; i < this.length; i++) {
 	  	this[i] = callback(x)
 	  } 
+=======
+Array.prototype.map = function(callback){
+
+>>>>>>> 6139d109628045e21009148a873b7cd0ec6ac1e6
 }
 
 /*
@@ -42,12 +47,16 @@ Please see example usage to understand what should be passed to the callback.
 */
 
 var asyncSum = function(a,b,callback){
+<<<<<<< HEAD
 	if (typeof(a) !== 'number'  || typeof(b) !== 'number') {
 		return callback(1,a)	// or b
 	}
 		  setTimeout(function () {
 			return callback(0,a+b) 
 		}, 1000)
+=======
+
+>>>>>>> 6139d109628045e21009148a873b7cd0ec6ac1e6
 };
 
 /*
@@ -73,7 +82,11 @@ Problem 3 (ADVANCED):
 
 What kind of candy do you like?
 Your answer: 
+<<<<<<< HEAD
 callback kind is better than syncro kind
+=======
+
+>>>>>>> 6139d109628045e21009148a873b7cd0ec6ac1e6
 */
 
 
